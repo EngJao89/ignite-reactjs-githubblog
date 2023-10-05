@@ -34,7 +34,7 @@ export function Profile() {
   })
 
   const getProfile = useCallback(async () => {
-    const response = await api.get('/users/pcmotta')
+    const response = await api.get('/users/EngJao89')
     const {
       avatar_url: avatarUrl,
       name,
