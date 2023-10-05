@@ -4,7 +4,7 @@ import { api } from '../../../../lib/axios'
 import { SearchIssues } from '../SearchIssues'
 import { IssueCard, IssuesContainer, IssuesList } from './styles'
 import { ptBR } from 'date-fns/locale'
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import ReactMarkdown from 'react-markdown'
 
 interface Issue {
   id: string
@@ -18,7 +18,7 @@ export function Issues() {
 
   const searchIssues = useCallback(async (text = '') => {
     const response = await api.get(
-      `search/issues?q=${text}%20repo:pcmotta/blog`,
+      `search/issues?q=${text}%20repo:`,
     )
     const { items } = response.data
     const issues = items.map((item: any) => ({
