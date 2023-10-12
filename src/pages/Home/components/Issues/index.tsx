@@ -18,7 +18,7 @@ export function Issues() {
 
   const searchIssues = useCallback(async (text = '') => {
     const response = await api.get(
-      `search/issues?q=${text}%20repo:`,
+      `/repos/EngJao89/ignite-reactjs-githubblog/issues`,
     )
     const { items } = response.data
     const issues = items.map((item: any) => ({
@@ -55,6 +55,7 @@ export function Issues() {
                 ? issue.body.substring(0, 200) + '...'
                 : issue.body}
             </ReactMarkdown>
+            console.log(issue);
           </IssueCard>
         ))}
       </IssuesList>
